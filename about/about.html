@@ -1,0 +1,80 @@
+---
+layout: about
+permalink: /about/
+---
+
+</div>
+
+<div id="aboutnav"> 
+	<ul>
+		<a href="javascript:;" id="rpmStory"><li id="text1">Story</li></a>
+		<a href="javascript:;" id="rpmTeam"><li id="text2">Team</li></a>
+		<a href="javascript:;" id="partners"><li id="text3">Partners</li></a>
+	</ul>
+</div>
+
+<div id="wrapper">
+
+		<div id="partition1">		
+			
+		</div>
+		<div id="partition2">
+			<img src="../images/aaron.jpg" height="285px" width="240" id="member">
+			<img src="../images/george.jpg"height="285px" width="240" id="member">
+		</div>
+		<div id="partition3">	
+		
+		</div>
+</div>
+
+
+
+<script>
+	$(function() {
+		$("#sec2").hide();
+		$("#sec3").hide();
+
+		$("#partition3").hide();
+		$("#partition2").hide();
+
+		$("#rpmStory").click(function() {
+			$("#text1").css("color", "#00BFFF");
+			$("#text2").css("color", "black");
+			$("#text3").css("color", "black");
+
+			$("#sec1").fadeIn(200);
+			$("#sec2").hide();
+			$("#sec3").hide();
+
+			$("#partition1").show();
+			$("#partition2").hide();
+			$("#partition3").hide();
+		});
+		$("#rpmTeam").click(function() {
+			$("#text1").css("color", "black");
+			$("#text2").css("color", "#00BFFF");
+			$("#text3").css("color", "black");
+
+			$("#sec2").fadeIn(200);
+			$("#sec1").hide();
+			$("#sec3").hide();
+
+			$("#partition2").show();
+			$("#partition1").hide();
+			$("#partition3").hide();
+		});
+		$("#partners").click(function() {
+			$("#text1").css("color", "black");
+			$("#text2").css("color", "black");
+			$("#text3").css("color", "#00BFFF");
+
+			$("#sec3").fadeIn(200);
+			$("#sec2").hide();
+			$("#sec1").hide();
+
+			$("#partition3").show();
+			$("#partition2").hide();
+			$("#partition1").hide();
+		});
+	});
+</script>
