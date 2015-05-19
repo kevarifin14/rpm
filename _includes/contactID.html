@@ -1,0 +1,56 @@
+<div id="wrapper">
+	<div id="simple">
+		{% include nav.html %}
+		<div id="form">
+		<form name="contact" action="http://formspree.io/kevarifin14@gmail.com" method="POST" target="_blank">
+			<div>
+				<label>E-mail</label>
+				<input type="text" id="email" name="E-mail">
+			</div>
+			<div>
+				<label>Subject</label>
+				<input type="text" id="subject" name="Subject">
+			</div>
+			<div>
+				<label>Name</label>
+				<input type="text" id="name" name="Name">
+			</div>
+			<div>
+				<label>Message</label>
+				<textarea id="msg" name="Message"></textarea>
+			</div>
+			<br>
+			<div class="button" id="submit">
+				<input type="button" value="Submit" onclick="submitForm()"/>
+			</div>
+		</form>
+		</div>
+	</div>
+
+<script type="text/javascript">
+	var form = document.forms["contact"];
+	function testSubmit() {
+		var formElements = new Array();
+		formElements[0] = form["E-mail"];
+		formElements[1] = form["Subject"];
+		formElements[2] = form["Name"];
+		formElements[3] = form["Message"];
+
+		for (i = 0; i < form.length; i++) {
+			if (formElements[i].value == "") {
+				alert("Please complete all fields.");
+				return false;
+			}
+			return true;
+		}
+	}
+
+	function submitForm() {
+		if (testSubmit()) {
+			form.submit();
+			form.reset();
+		}
+	}	
+</script>
+
+

@@ -1,6 +1,6 @@
 /** General */
 
-h1, h2, h3, h4, p{
+h1, h2, h3, h4, p, label{
 	color: white;
 	font-size: 300%;
 	font-family: 'Open Sans', sans-serif;
@@ -17,7 +17,60 @@ div {
 	width: 100%;
 }
 
-/** Stylin' the nav bar **/
+/**
+ * Form input settings */
+
+label {
+	font-size: 150%;
+	display: block;
+}
+
+input {
+	font-size: 150%;
+}
+
+input[type=button] {
+	height: 60px;
+	width: 300px;
+	background: #424242;
+	border: none;
+	color: white;
+}
+
+input[type=button]:hover {
+	background: #DF7401;
+	-webkit-transition: background 0.3s ease-in-out;
+	-moz-transition: background 0.3s ease-in-out;
+	-ms-transition: background 0.3s ease-in-out;
+	-o-transition: background 0.3s ease-in-out;
+	transition: background 0.3s ease-in-out;
+}
+
+form {
+	float: left;	
+	margin: 0 auto;
+	width: 400px;
+}
+
+textarea {
+	font-size: 110%;
+	vertical-align: top;
+	height: 5em;
+	width: 300px;
+	resize: vertical;
+	max-height: 300px;
+}
+
+#form {
+	left: 10%;
+	width: 80%;
+	position: absolute;
+	top: 20%;
+	vertical-align: center;
+}
+
+/** 
+ * Stylin' the nav bar */
 nav{
 	z-index: 5;
 	display: block;
@@ -58,7 +111,9 @@ nav ul li #navText:hover {
 	transition: color 0.3s ease-in-out;
 }
 
-/** Button Utilities **/
+/** 
+ * Button Utilities */
+
 #button {
 	position: relative;
 	height: 150px;
@@ -90,12 +145,14 @@ nav ul li #navText:hover {
 }
 
 
-/** Section image backgrounds **/
+/** 
+ * Section image backgrounds */
 
 #wrapper {
 	position: relative;
 	height: 100%;
 }
+
 
 #wrapper90 {
 	position: relative;
@@ -154,6 +211,17 @@ nav ul li #navText:hover {
 	background-size: cover;
 }
 
+#simple {
+	position: relative;
+	height: 100%;
+	background-attachment: fixed;
+	background: url(../images/wood.jpg) no-repeat center center fixed; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
 #pointerContainer {
 	position: absolute;
 	left: 48%;
@@ -184,7 +252,13 @@ nav ul li #navText:hover {
 	font-size: 100%;
 }
 
-/* About page styling */
+/**
+ * About page styling 
+ * Section 1: General style for dividing page into different sections.
+ * Section 2: 
+ */
+
+/* Section 1: General Formatting */
 
 #sec1 {
 	position: absolute;
@@ -199,7 +273,7 @@ nav ul li #navText:hover {
 
 #partition1 {
 	height: 100%;
-	position: absolute;
+	position: relative;
 }
 
 #sec2 {
@@ -214,8 +288,7 @@ nav ul li #navText:hover {
 }
 
 #partition2 {
-	height: 100%;
-	position: absolute;
+	position: relative;
 }
 
 #sec3 {
@@ -231,7 +304,7 @@ nav ul li #navText:hover {
 
 #partition3 {
 	height: 100%;
-	position: absolute;
+	position: relative;
 }
 
 #aboutnav {
@@ -270,9 +343,86 @@ nav ul li #navText:hover {
 	text-align: left;
 } 
 
-
 #aboutText p {
 	font-size: 200%;
+}
+
+/* Section 2: Story */
+
+#partition1 img {
+	display: block;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+#storyContainer {
+	width: 60%;
+	position: relative;
+	left: 20%;
+}
+
+#storyContainer p {
+	color: black;
+	font-size: 120%;
+}
+
+/* Section 3: Team */
+
+#headshot {
+	text-align: center;
+}
+
+#inner {
+	position: relative;
+}
+
+#aboutWrapper {
+	width: 50%;
+	margin: 0 auto;
+}
+
+#title {
+	font-size: 110%;
+	color: #DF7401;
+}
+
+#names {
+	font-size: 200%;
+	color: #00BFFF;
+}
+
+#about {
+	color: black;
+	font-size: 100%;
+}
+
+/* Section 4: Partners */
+
+.partnerLogo {
+	position: absolute;
+	top: 30px;
+	text-align: center;
+}
+
+.popup {
+	position: fixed;
+	display: none;
+	background: white;
+	width: 80%;
+	height: 80%;
+	left: 10%;
+	top: 10%;
+	z-index: 20;
+}
+
+.cover {
+	z-index: 10;
+	background: black;
+	display: none;
+	height: 100%;
+	width: 100%;
+	opacity: 0;
+	position: fixed;
 }
 
 /** iframe settings **/
@@ -287,6 +437,10 @@ iframe {
 	width: 100%;
 	height: 100%;
 }
+
+/** 
+ * Footer settings
+ * Configures footer navbar and copyright */
 
 #footer {
 	position: relative;

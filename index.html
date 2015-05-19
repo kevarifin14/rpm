@@ -20,7 +20,7 @@ layout: index
 </div>
 
 <div id="button">
-	<a href="#"><div id="product">
+	<a href="product"><div id="product">
 		<h1>Check Out Our Product</h1>
 	</div></a>
 </div>
@@ -46,10 +46,6 @@ layout: index
 			$("#learnMoreContainer").fadeToggle(200);
 		});
 
-		function scrollToAnchor(dest) {
-			var anchor = $("a[name='" + dest + "']");
-			$('html,body').animate({scrollTop: anchor.offset().top}, 'slow');
-		}
 
 		$("#link").click(function() {
 			scrollToAnchor('codeword');
@@ -61,12 +57,13 @@ layout: index
 			scrollToAnchor("iframe");
 		});
 
-		//$("#learnMoreContainer").on('click', scrollToAnchor("iframe")):
+		function scrollToAnchor(dest) {
+			var anchor = $("a[name='" + dest + "']");
+			$('html,body').animate({scrollTop: anchor.offset().top}, 'slow');
+		}
 
 		function fadeImages(images, i) {
 			setInterval(function() {
-				// i current frame to disappear
-				// i + 2 next frame to di
 				var curr = images[i];
 				$(curr).fadeToggle(500);
 				var next = images[i-1];
