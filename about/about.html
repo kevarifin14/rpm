@@ -1,137 +1,46 @@
 ---
-layout: about
+layout: default
 permalink: /about/
 ---
-
-</div>
-
-<div id="aboutnav"> 
-	<ul>
-		<a href="javascript:;" id="rpmStory"><li id="text1">Story</li></a>
-		<a href="javascript:;" id="rpmTeam"><li id="text2">Team</li></a>
-		<a href="javascript:;" id="partners"><li id="text3">Partners</li></a>
-	</ul>
-</div>
-
-<div id="partition1">
-	<img src="../images/rpmText.png" height="150.75" width="1224" align="middle">
-	<div id="storyContainer">
-		<p>
-		George was successful in his goal of architecting a fully functional platform for managing a portfolio of solar assets.  However, he saw that this platform’s scalability was limited by the tools and manual processes that it relied upon.  As SolarCity’s customer base approached 100,000 contracts and executive leaders set targets to reach half a million within the next few years, it became apparent to George that a software solution was required in order for financial operations to efficiently scale with the business.
-		</p>
+<div class="cover" id="lake_merritt">
+	{% include nav.html %}
+	<div class="col-md-4 col-md-offset-6" id="side">
+		<h1>Our Story</h1>
+		<h3>
+      George got the inspiration for solars first asset management software
+      platform from his portfolio management experience at the industrys two
+      leaders, SunRun and SolarCity...
+    </h3>
+	</div>
 	</div>
 </div>
 
-<div id="partition2">
-<div id="inner">
-	<br>
-		<div id="headshot">
-			<h1 id="title">Founder & CEO</h1>	
-			<h1 id="names">George Zviagin</h1>
-			<img src="../images/george.jpg"height="285px" width="240" id="member">
-		</div>
-		<div id="aboutWrapper">
-			<p id="about">
-			George founded Ra Power Management to lower the cost of capital for solar project financing by providing a software platform that empowers distributed solar investors and developers to efficiently scale the management of their data and workflows.   Prior to RPM, George was a Portfolio Manager at SolarCity where he led the Portfolio Management group.  While at SolarCity, George managed the company’s $4+ billion / 750+ MW portfolio of solar assets and directed investor relations with all funds, lenders and limited partners.  Additionally, he was a leading contributor to the historic and successful issuance of solar’s first two rounds of asset backed securitization (ABS).
-			</p>
-		</div>
-		<div id="headshot">
-			<h1 id="title">Co-Founder & COO</h1>
-			<h1 id="names">Aaron Iverson</h1>
-			<img src="../images/aaron.jpg" height="285px" width="240" id="member">
-		</div>
-		<div id="aboutWrapper">
-			<p id="about">
-			Aaron first realized solar’s potential while working on a research project for Harrington Ventures LLC, a real estate investment fund in the San Francisco bay area. Although he saw many possible opportunities in the solar space, it wasn’t until he began discussing the idea of a solar asset management platform with George did everything click. With over 10 years of experience working with a variety of asset management systems, it was easy for him to see the power and value in an integrated platform tailored specifically for solar. With George’s extensive knowledge of industry best practices and Aaron’s first-hand experience working with some of the best asset management systems on the market, the two came together to form RPM.
-			</p>
-		</div>
+<div>
+
+  <!-- Nav tabs -->
+  <ul class="nav nav-tabs center" role="tablist">
+    <li role="presentation" class="active">
+    	<a href="#story" aria-controls="story" role="tab" data-toggle="tab">Story</a>
+    </li>
+    <li role="presentation">
+    	<a href="#team" aria-controls="team" role="tab" data-toggle="tab">Team</a>
+    </li>
+    <li role="presentation">
+    	<a href="#partners" aria-controls="partners" role="tab" data-toggle="tab">Partners</a>
+    </li>
+  </ul>
+
+  <!-- Tab panes -->
+  <div class="tab-content">
+    <div role="tabpanel" class="tab-pane active" id="story">
+  	{% include about/story.html %}
+    </div>
+    <div role="tabpanel" class="tab-pane" id="team">
+    	{% include about/team.html %}
+    </div>
+    <div role="tabpanel" class="tab-pane" id="partners">
+    	{% include about/partners.html %}
+    </div>
+  </div>
+
 </div>
-</div>
-
-<div class="popup" id="sfuncube"></div>
-<div id="partition3">	
-	<div class="partnerLogo" id="sfuncube">
-		<img src="../images/sfuncube.png" width="741px" height="214px">
-	</div>
-</div>
-
-<script>
-	$(function() {
-		var currentPopup;
-
-		function showPopup(popupName) {
-			$(popupName).fadeIn(500);
-			$(".cover").fadeTo(500, 0.5);
-		}
-
-		function hidePopup(popupName) {
-			$(popupName).fadeOut(500);
-			$(".cover").fadeOut(500);
-		}
-
-		$(".partnerLogo").click(function() {
-			currentPopup = "#" + this.id + ".popup";
-			showPopup(currentPopup);
-		});
-
-		$(".cover").click(function() {
-			hidePopup(currentPopup);
-		});
-
-		$(".partnerLogo").mouseover(function() {
-			$(this).animate({top: '-=10px'}, 100);
-		});
-
-		$(".partnerLogo").mouseout(function() {
-			$(this).animate({top: '+=10px'}, 100);
-		});
-
-		$("#text1").css("color", "#00BFFF");
-		
-		$("#sec2").hide();
-		$("#sec3").hide();
-
-		$("#partition3").hide();
-		$("#partition2").hide();
-
-		$("#rpmStory").click(function() {
-			$("#text1").css("color", "#00BFFF");
-			$("#text2").css("color", "black");
-			$("#text3").css("color", "black");
-
-			$("#sec1").show();
-			$("#sec2").hide();
-			$("#sec3").hide();
-
-			$("#partition1").show();
-			$("#partition2").hide();
-			$("#partition3").hide();
-		});
-		$("#rpmTeam").click(function() {
-			$("#text1").css("color", "black");
-			$("#text2").css("color", "#00BFFF");
-			$("#text3").css("color", "black");
-
-			$("#sec2").show();
-			$("#sec1").hide();
-			$("#sec3").hide();
-
-			$("#partition2").show();
-			$("#partition1").hide();
-			$("#partition3").hide();
-		});
-		$("#partners").click(function() {
-			$("#text1").css("color", "black");
-			$("#text2").css("color", "black");
-			$("#text3").css("color", "#00BFFF");
-
-			$("#sec3").show();
-			$("#sec2").hide();
-			$("#sec1").hide();
-
-			$("#partition3").show();
-			$("#partition2").hide();
-			$("#partition1").hide();
-		});
-	});
-</script>

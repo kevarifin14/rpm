@@ -1,85 +1,14 @@
 ---
-layout: index
+layout: default
 ---
-  	<div id="pointerContainer">
-	  	<img id="pointer" src="../images/pointer.png" width="40" height="25">
-	</div>
-	<a id="link" href="#"><div id="learnMoreContainer">
-		Learn More
-	</div></a>
-</div>
+{% include index/carousel.html %}
 
-<A NAME="codeword"></a>
-<div id="iframeContainer"> 
+<div id="iframeContainer">
 
-  <iframe src="https://player.vimeo.com/video/110351207?title=0&byline=0&portrait=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> 
+  <iframe src="https://player.vimeo.com/video/110351207?title=0&byline=0&portrait=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 
 </div>
 
-<div id="berkeleyView">
+<div class="cover" id="berkeleyView">
 </div>
-
-<div id="button">
-	<a href="product"><div id="product">
-		<h1>Check Out Our Product</h1>
-	</div></a>
-</div>
-
-
-<script>  
-	$(function() {
-		$("#learnMoreContainer").hide();
-
-		var images = new Array()
-		images[0] = "#sunset"
-		images[1] = "#goldenGate"
-		images[2] = "#blue"
-		var pause = 3000;
-
-		$("#pointerContainer").mouseover(function() {
-			$("#learnMoreContainer").fadeToggle(200);
-			$("#pointerContainer").fadeToggle(200);
-		});
-
-		$("#learnMoreContainer").mouseout(function() {
-			$("#pointerContainer").fadeToggle(200);
-			$("#learnMoreContainer").fadeToggle(200);
-		});
-
-
-		$("#link").click(function() {
-			scrollToAnchor('codeword');
-		});
-
-		
-
-		$("#learnMoreContainer").mouseover(function() {
-			scrollToAnchor("iframe");
-		});
-
-		function scrollToAnchor(dest) {
-			var anchor = $("a[name='" + dest + "']");
-			$('html,body').animate({scrollTop: anchor.offset().top}, 'slow');
-		}
-
-		function fadeImages(images, i) {
-			setInterval(function() {
-				var curr = images[i];
-				$(curr).fadeToggle(500);
-				var next = images[i-1];
-				if (i == 0) {
-					var next = images[i+2];
-				}
-				$(next).fadeToggle(500);
-				if (i == images.length - 1) {
-					i = 0;
-				} else {
-					i = i + 1;
-				}
-			}, pause);
-		}
-
-		fadeImages(images, 0);	
-	});
-</script>
 
